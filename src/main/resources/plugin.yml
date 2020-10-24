@@ -1,0 +1,9 @@
+name: ${project.artifactId}
+version: ${project.version}
+main: ${project.groupId}.AdvancedBanGUI
+author: Leoko
+depend: [AdvancedGUI, AdvancedBan]
+
+commands:
+  bangui:
+    description: Main command

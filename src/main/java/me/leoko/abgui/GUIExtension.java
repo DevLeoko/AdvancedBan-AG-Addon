@@ -14,10 +14,7 @@ import me.leoko.advancedban.manager.UUIDManager;
 import me.leoko.advancedban.utils.PunishmentType;
 import me.leoko.advancedgui.AdvancedGUI;
 import me.leoko.advancedgui.manager.ResourceManager;
-import me.leoko.advancedgui.utils.Interaction;
-import me.leoko.advancedgui.utils.Layout;
-import me.leoko.advancedgui.utils.LayoutExtension;
-import me.leoko.advancedgui.utils.ListItemBuilder;
+import me.leoko.advancedgui.utils.*;
 import me.leoko.advancedgui.utils.components.Component;
 import me.leoko.advancedgui.utils.components.*;
 import me.leoko.advancedgui.utils.events.GuiInteractionExitEvent;
@@ -84,7 +81,7 @@ public class GUIExtension implements LayoutExtension {
         final Font font = ResourceManager.getInstance().getFont(FONT_NAME, 18);
 
         final TextInputComponent inputComponent = new TextInputComponent("", null, 0, 0, 128, 25, 7,
-                GREY_BLUE_DARKER, TRANSPARENT, font, WHITE, LIGHT_GREY, "Search player...", "");
+                GREY_BLUE_DARKER, TRANSPARENT, font, WHITE, LIGHT_GREY, "Search player...", "", null, false);
 
         final Component offlineHint = layout.getComponentTree().locate(OFFLINE_HINT_ID);
         final Component startHint = layout.getComponentTree().locate(START_HINT_ID);
@@ -96,7 +93,7 @@ public class GUIExtension implements LayoutExtension {
         final AdaptiveComponent searchRoot = new AdaptiveComponent("", null, startHint);
 
         ((DummyComponent) layout.getComponentTree().locate(LIST_ID)).setComponent(searchRoot);
-        inputComponent.setInputHandler(TextInputComponent.limitHandler(
+        inputComponent.setInputHandler(InputHandler.limitHandler(
                 (interaction, text) -> {
                     if (text.length() == 0) {
                         searchRoot.adapt(interaction, startHint);
@@ -233,10 +230,10 @@ public class GUIExtension implements LayoutExtension {
                 "", null,
                 67, 36, 50, 8, 0,
                 TRANSPARENT, TRANSPARENT, font, LIGHT_GREY, GREY,
-                "NONE", ""
+                "NONE", "", null, false
         );
 
-        reasonInput.setInputHandler(TextInputComponent.limitHandler(
+        reasonInput.setInputHandler(InputHandler.limitHandler(
                 (interaction, text) -> {
                     currentPunishmentSetup.get(interaction).setReason(text);
                     return text;
@@ -249,10 +246,10 @@ public class GUIExtension implements LayoutExtension {
                 "", null,
                 67, 77, 50, 8, 0,
                 TRANSPARENT, TRANSPARENT, font, LIGHT_GREY, GREY,
-                "Duration", PunishmentData.DEFAULT_DURATION
+                "Duration", PunishmentData.DEFAULT_DURATION, null, false
         );
 
-        durationInput.setInputHandler(TextInputComponent.limitHandler(
+        durationInput.setInputHandler(InputHandler.limitHandler(
                 (interaction, text) -> {
                     currentPunishmentSetup.get(interaction).setDuration(text);
                     return text;

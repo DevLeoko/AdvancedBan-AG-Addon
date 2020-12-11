@@ -6,7 +6,7 @@
 
     <groupId>me.leoko.abgui</groupId>
     <artifactId>AdvancedBan-AG-Addon</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
 
     <properties>
         <build>RELEASE</build>
@@ -29,7 +29,7 @@
         <dependency>
             <groupId>me.leoko.advancedgui</groupId>
             <artifactId>AdvancedGUI</artifactId>
-            <version>1.8</version>
+            <version>2.0.2</version>
         </dependency>
 
         <dependency>

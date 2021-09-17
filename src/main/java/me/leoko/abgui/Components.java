@@ -1,7 +1,5 @@
 package me.leoko.abgui;
 
-import me.leoko.advancedgui.manager.ColorManager;
-
 import java.awt.*;
 
 public class Components {
@@ -46,14 +44,14 @@ public class Components {
     public static final String PUN_CREATE_CREATE_BTN_ID = "Cl3NZlow";
     public static final String PUN_CREATE_CANCEL_BTN_ID = "gOwdQcTC";
 
-    public static final Color PRIMARY = ColorManager.getInstance().convert("#641BAF");
-    public static final Color GREY_BLUE_DARKER = ColorManager.getInstance().convert("#2c384a");
-    public static final Color GREY = ColorManager.getInstance().convert("#5a5c5c");
-    public static final Color LIGHT_GREY = ColorManager.getInstance().convert("#c9c9c9");
-    public static final Color WHITE = ColorManager.getInstance().convert(Color.WHITE);
-    public static final Color RED = ColorManager.getInstance().convert(Color.RED);
-    public static final Color GREEN = ColorManager.getInstance().convert(Color.GREEN);
-    public static final Color ORANGE = ColorManager.getInstance().convert("#f2784b");
+    public static final Color PRIMARY = new Color(100, 27, 175);
+    public static final Color GREY_BLUE_DARKER = new Color(44, 56, 74);
+    public static final Color GREY = new Color(90, 92, 92);
+    public static final Color LIGHT_GREY = new Color(201, 201, 201);
+    public static final Color WHITE = Color.WHITE;
+    public static final Color RED = Color.RED;
+    public static final Color GREEN = Color.GREEN;
+    public static final Color ORANGE = new Color(242, 120, 75);
     public static final Color TRANSPARENT = new Color(0, 0, 0, 0);
 
     public static final String FONT_NAME = "VT323";
